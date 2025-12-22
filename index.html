@@ -16,7 +16,7 @@
 
 	<header>
 		<nav>
-			<div>
+			<a href="#">
 				<svg width="214" height="210" viewBox="0 0 214 210" xmlns="http://www.w3.org/2000/svg">
 					<g fill="none" stroke="white" stroke-width="12">
 						<path
@@ -26,8 +26,8 @@
 					</g>
 				</svg>
 
-				<a href="#">Planned Planthood</a>
-			</div>
+				PLANNED PLANTHOOD
+			</a>
 
 			<ul>
 				<li><a href="#">Meny</a></li>
@@ -39,97 +39,132 @@
 		</nav>
 	</header>
 
-	<h1>Våra uppskattade växter</h1>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero harum recusandae et, nemo ea, non
-		fugit
-		sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.</p>
+	<main>
+		<section>
+			<h1>Våra uppskattade växter</h1>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero harum recusandae et, nemo ea, non
+				fugit
+				sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.</p>
+		</section>
 
-	<h2>Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!</h2>
-	Skicka
+		<section aria-labelledby="newsletter-heading">
+			<h2 id="newsletter-heading">
+				Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!
+			</h2>
 
-	<h2>Alla våra växter</h2>
+			<form action="" method="POST">
+				<label for="user-email" class="visually-hidden">
+					E-postadress
+				</label>
+				<input type="email" name="email" id="user-email" autocomplete="email" placeholder="namn@domän.se" required>
 
-	<article>
-		<h3>Gurka</h3>
-		<ul>
-			<li><a href="#">Blommor</a></li>
-			<li><a href="#">Ätbart</a></li>
-			<li><a href="#">Grönska</a></li>
-		</ul>
-		<p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med vattning,
-			omplantering,
-			duschning och gödsling.</p>
-		<p>Coolio</p>
-		<p>2024-04-01</p>
-	</article>
+				<button type="submit" class="">Skicka</button>
+			</form>
+		</section>
 
-	<article>
-		<h3>Tomat</h3>
-		<ul>
-			<li><a href="#">Solälskande</a></li>
-			<li><a href="#">Lättodlat</a></li>
-			<li><a href="#">Ätbart</a></li>
-		</ul>
-		<p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under sommaren.</p>
-		<p>Anna Odlare</p>
-		<p>2024-12-05</p>
-	</article>
+		<section>
+			<h2>Alla våra växter</h2>
 
-	<article>
-		<h3>Pelargon</h3>
-		<ul>
-			<li><a href="#">Dekorativ</a></li>
-			<li><a href="#">Färgstark</a></li>
-			<li><a href="#">Tålig</a></li>
-			<li><a href="#">Blommor</a></li>
-		</ul>
-		<p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
-		<p>Blomsterkalle</p>
-		<p>2024-12-03</p>
-	</article>
+			<article>
+				<a href="#">
+					<h3>Gurka</h3>
+					<ul>
+						<li>Blommor</li>
+						<li>Ätbart</li>
+						<li>Grönska</li>
+					</ul>
+					<p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med vattning,
+						omplantering,
+						duschning och gödsling.</p>
+					<p>Coolio</p>
+					<p>2024-04-01</p>
+				</a>
+			</article>
 
-	<article>
-		<h3>Basilika</h3>
-		<ul>
-			<li><a href="#">Dekorativ</a></li>
-			<li><a href="#">Färgstark</a></li>
-			<li><a href="#">Tålig</a></li>
-		</ul>
-		<p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
-		<p>Krydd-Malin</p>
-		<p>2024-12-07</p>
-	</article>
+			<article>
+				<a href="#">
+					<h3>Tomat</h3>
+					<ul>
+						<li>Solälskande</li>
+						<li>Lättodlat</li>
+						<li>Ätbart</li>
+					</ul>
+					<p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under sommaren.</p>
+					<p>Anna Odlare</p>
+					<p>2024-12-05</p>
+				</a>
+			</article>
 
-	<article>
-		<h3>Sallad</h3>
-		<ul>
-			<li><a href="#">Snabbväxande</a></li>
-			<li><a href="#">Ätbart</a></li>
-			<li><a href="#">Grönska</a></li>
-		</ul>
-		<p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.</p>
-		<p>Grönis</p>
-		<p>2024-12-06</p>
-	</article>
+			<article>
+				<a href="#">
+					<h3>Pelargon</h3>
+					<ul>
+						<li>Dekorativ</li>
+						<li>Färgstark</li>
+						<li>Tålig</li>
+						<li>Blommor</li>
+					</ul>
+					<p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
+					<p>Blomsterkalle</p>
+					<p>2024-12-03</p>
+				</a>
+			</article>
 
-	<article>
-		<h3>Ormbunke</h3>
-		<ul>
-			<li><a href="#">Luftfuktande</a></li>
-			<li><a href="#">Grönska</a></li>
-			<li><a href="#">Dekorativ</a></li>
-		</ul>
-		<p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
-		<p>Naturvännen</p>
-		<p>2024-12-08</p>
-	</article>
+			<article>
+				<a href="#">
+					<h3>Basilika</h3>
+					<ul>
+						<li>Dekorativ</li>
+						<li>Färgstark</li>
+						<li>Tålig</li>
+					</ul>
+					<p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
+					<p>Krydd-Malin</p>
+					<p>2024-12-07</p>
+				</a>
+			</article>
 
-	<h2>Våra tidigare odlingar</h2>
-	<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ratione quia eos pariatur deserunt veritatis.
-		Tenetur, ipsum! Iusto delectus ipsam esse pariatur rerum eveniet nostrum, dolor distinctio nam quaerat doloribus?
-	</p>
+			<article>
+				<a href="#">
+					<h3>Sallad</h3>
+					<ul>
+						<li>Snabbväxande</li>
+						<li>Ätbart</li>
+						<li>Grönska</li>
+					</ul>
+					<p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.</p>
+					<p>Grönis</p>
+					<p>2024-12-06</p>
+				</a>
+			</article>
 
-	<h2>Planterade plantor</h2>
+			<article>
+				<a href="#">
+					<h3>Ormbunke</h3>
+					<ul>
+						<li>Luftfuktande</li>
+						<li>Grönska</li>
+						<li>Dekorativ</li>
+					</ul>
+					<p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
+					<p>Naturvännen</p>
+					<p>2024-12-08</p>
+				</a>
+			</article>
+		</section>
+
+		<section>
+			<h2>Våra tidigare odlingar</h2>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Aspernatur ratione quia eos pariatur deserunt
+				veritatis.
+				Tenetur, ipsum! Iusto delectus ipsam esse pariatur rerum eveniet nostrum, dolor distinctio nam quaerat
+				doloribus?
+			</p>
+			<!-- Länk som jag istället stylar så den ser ut som en button då länk är mer lämpligt här -->
+			<a href="#">Planterade plantor</a>
+		</section>
+
+	</main>
 
 	<footer>
 		<h2>Om oss</h2>
@@ -137,8 +172,8 @@
 			perspiciatis
 			fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius molestias?</p>
 
-		Telefon: 020-1234567
-		E-post: info@plannedplant.com
+		<p>Telefon: 020-1234567</p>
+		<p>E-post: info@plannedplant.com</p>
 
 		<ul>
 			<li><a href="#">Hem</a></li>
