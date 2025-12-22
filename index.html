@@ -53,6 +53,7 @@
 			</h2>
 
 			<form action="" method="POST">
+				<!-- Added Peters visually-hidden class to make it only visible for screen readers-->
 				<label for="user-email" class="visually-hidden">
 					E-postadress
 				</label>
@@ -167,20 +168,27 @@
 	</main>
 
 	<footer>
-		<h2>Om oss</h2>
-		<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
-			perspiciatis
-			fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius molestias?</p>
+		<!-- Got inspo about aria-labelledby from how I did the recept exercise -->
+		<section aria-labelledby="footer-about-heading">
+			<h2 id="footer-about-heading">Om oss</h2>
+			<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
+				perspiciatis
+				fuga. Consequuntur nesciunt ea corrupti aperiam fugit inventore ratione earum. Iure, eius molestias?</p>
 
-		<p>Telefon: 020-1234567</p>
-		<p>E-post: info@plannedplant.com</p>
+			<p>Telefon: 020-1234567</p>
+			<p>E-post: info@plannedplant.com</p>
+		</section>
 
-		<ul>
-			<li><a href="#">Hem</a></li>
-			<li><a href="#">Historik</a></li>
-			<li><a href="#">Tips</a></li>
-			<li><a href="#">Kontakt</a></li>
-		</ul>
+		<nav aria-labelledby="footer-nav-heading">
+			<!-- for screenreaders only -->
+			<h2 id="footer-nav-heading" class="visually-hidden">Snabblänkar</h2>
+			<ul>
+				<li><a href="#">Hem</a></li>
+				<li><a href="#">Historik</a></li>
+				<li><a href="#">Tips</a></li>
+				<li><a href="#">Kontakt</a></li>
+			</ul>
+		</nav>
 
 	</footer>
 
