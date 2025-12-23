@@ -265,6 +265,10 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   align-items: center;
 }
 
+.flex-h-center {
+  justify-content: center;
+}
+
 .logo-svg {
   width: 2rem;
   height: auto;
@@ -295,4 +299,60 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 
 .section-padding {
   padding-block: var(--flow-space-lg);
+}
+
+.svg-deco {
+  background-color: var(--clr-accent);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  width: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 50%;
+  }
+}
+
+
+/* HAR ANVÄNT DETTA ISTÄLLET FÖR FLEX SOM PÅ FÖRSTA. renskriv. Detta är de två med gröna klistermärken */
+
+.max-w-50 {
+  max-width: 60%;
+}
+
+.grid-columns {
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+}
+
+/* ...... */
+
+.form-deco {
+  display: inline-flex;
+  /* display: inline; */
+  /* padding: 1rem 0.75rem; */
+  border: 2px solid black;
+  border-radius: 2rem;
+  overflow: hidden;
+  padding: 0.2rem;
+}
+
+.form-input {
+  background-color: var(--clr-primary-light-1);
+  border: none;
+  padding: 0.5rem;
+
+
+  /* max-width funkar inte! kolla varför */
+  width: 500px;
+}
+
+.form-btn {
+  background-color: var(--clr-accent);
+  border-radius: 1.5rem;
+  border: none;
+  padding: 0.5rem 1.5rem;
 }
