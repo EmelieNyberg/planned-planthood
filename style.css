@@ -45,6 +45,13 @@ h6 {
   text-wrap: balance;
 }
 
+/* Tillfällig */
+img {
+  max-width: 100px;
+}
+
+
+
 p,
 li,
 figcaption {
