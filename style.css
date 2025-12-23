@@ -283,3 +283,16 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 .bg-clr-light-1 {
   background-color: var(--clr-primary-light-1);
 }
+
+.grid {
+  display: grid;
+  gap: var(--flow-space);
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.section-padding {
+  padding-block: var(--flow-space-lg);
+}
