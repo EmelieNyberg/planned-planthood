@@ -59,6 +59,10 @@ figcaption {
   /* max-width: 55ch; */
 }
 
+ul {
+  list-style: none;
+}
+
 /* for container queries, landmarks as containers */
 body> :is(header, footer),
 main {
@@ -241,4 +245,41 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   position: absolute;
   white-space: nowrap;
   width: 1px;
+}
+
+.clr-font-green {
+  color: var(--clr-accent);
+}
+
+.flex-row {
+  display: flex;
+  flex-direction: row;
+  gap: var(--spacing-base);
+}
+
+.flex-space-b {
+  justify-content: space-between;
+}
+
+.flex-v-center {
+  align-items: center;
+}
+
+.logo-svg {
+  width: 2rem;
+  height: auto;
+}
+
+.logo-text span {
+  display: block;
+  line-height: 0.8;
+  font-weight: var(--fw-500);
+}
+
+.mobile-only {
+  display: none;
+}
+
+.bg-clr-light-1 {
+  background-color: var(--clr-primary-light-1);
 }
