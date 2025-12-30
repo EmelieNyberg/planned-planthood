@@ -279,6 +279,19 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 
 .mobile-only {
   display: none;
+
+  /* Mobile */
+  @media (width < 599px) {
+    display: flex;
+  }
+}
+
+.screen-only {
+
+  /* Mobile */
+  @media (width < 599px) {
+    display: none;
+  }
 }
 
 .bg-clr-light-1 {
@@ -308,6 +321,12 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 
 .grid-self-end {
   justify-self: end;
+
+  /* Mobile */
+  @media (width < 599px) {
+    justify-self: center;
+  }
+
 }
 
 .txt-center {
@@ -336,11 +355,35 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 
 /* HAR ANVÄNT DETTA ISTÄLLET FÖR FLEX SOM PÅ FÖRSTA. renskriv. Detta är de två med gröna klistermärken */
 
-.max-w-50 {
+.max-w-70 {
   max-width: 70%;
 }
 
-.grid-columns {
+.grid-columns-cta-section {
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
+  grid-template-areas:
+    "second first";
+
+  /* Mobile */
+  @media (width < 599px) {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "first"
+      "second";
+    text-align: center;
+  }
+}
+
+.first {
+  grid-area: first;
+}
+
+.second {
+  grid-area: second;
+}
+
+.grid-columns-footer {
   grid-template-columns: 1fr 1fr;
   margin: auto;
 }
@@ -365,8 +408,8 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 .form-input {
   background-color: var(--clr-primary-light-1);
   border: none;
-  padding: 0.5rem;
-
+  margin: 0.25rem;
+  color: var(--clr-primary-dark);
 
   /* max-width funkar inte! kolla varför */
   width: 100%;
@@ -455,4 +498,75 @@ li[data-type="air"] {
 /* Justera avatar storlek */
 .avatar {
   width: 50px;
+}
+
+/* The grid area solution comes from Kewin Powell and how he solved the bento grid task */
+.images-deco {
+  display: grid;
+  grid-template-areas:
+    "one one two three four four"
+    "one one five five six six";
+  grid-auto-rows: 300px;
+  grid-template-columns: repeat(6, 1fr);
+  border: 15px solid var(--clr-primary-light-1);
+  box-shadow: var(--border-shadow);
+
+  img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+
+  /* Tablet */
+  @media (600px < width < 1024px) {
+    grid-template-areas:
+      "one one two two three three"
+      "four four five five six six";
+  }
+
+  /* Mobile */
+  @media (width < 599px) {
+    grid-template-areas:
+      "one one one two two two"
+      "three three three four four four"
+      "five five five six six six";
+  }
+}
+
+.one {
+  grid-area: one;
+}
+
+.two {
+  grid-area: two;
+}
+
+.three {
+  grid-area: three;
+}
+
+.four {
+  grid-area: four;
+}
+
+.five {
+  grid-area: five;
+}
+
+.six {
+  grid-area: six;
+}
+
+.icon-menu {
+  color: var(--clr-accent);
+
+  &:hover {
+    color: var(--clr-accent-light-1);
+    background-color: var(--clr-accent);
+  }
+}
+
+.btn-menu {
+  background: none;
+  border: none;
 }
