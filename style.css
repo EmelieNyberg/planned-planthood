@@ -1,5 +1,8 @@
-/*** Reset ***/
-/* This is from Kevin Powell, edit to your liking */
+/********************* 
+ RESET 
+*********************/
+
+/* This is from Kevin Powell*/
 
 /* makes sizing simpler */
 *,
@@ -14,16 +17,6 @@
   margin: 0;
   padding: 0;
   font: inherit;
-}
-
-/* dark mode user-agent-styles */
-html {
-  color-scheme: dark light;
-}
-
-/* min body height */
-body {
-  min-height: 100vh;
 }
 
 /* responsive images/videos */
@@ -69,7 +62,10 @@ main {
   padding: 0;
 }
 
-/*** Theme ***/
+
+/********************** 
+ THEME
+ *********************/
 
 :root {
   /* color definitions */
@@ -116,9 +112,6 @@ main {
   --fs-800: 2.5rem;
   --fs-900: 3rem;
 
-
-  /*** Theme setup ***/
-
   /* font family */
   --font-base: "Open Sans", "Segoe UI", Tahoma, sans-serif;
 
@@ -150,7 +143,19 @@ main {
   --flow-space-lg: 4em;
 }
 
-/*** Global/base ***/
+
+/*************************
+ GLOBAL/BASE 
+ ************************/
+
+/* min body height */
+body {
+  min-height: 100vh;
+  font-family: var(--font-base);
+  background-color: var(--clr-accent-light-1);
+  color: var(--clr-primary-dark);
+}
+
 h1,
 h2,
 h3 {
@@ -178,14 +183,11 @@ a {
   }
 }
 
-body {
-  font-family: var(--font-base);
-  background-color: var(--clr-accent-light-1);
-  color: var(--clr-primary-dark);
-}
 
+/***********************
+ COMPOSITION 
+ **********************/
 
-/*** Composition ***/
 .flow>*+* {
   margin-block-start: var(--flow-space);
 }
@@ -227,8 +229,25 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   grid-column: fullwidth;
 }
 
+.grid-columns-footer {
+  grid-template-columns: 1fr 1fr;
+  margin: auto;
 
-/*** Utilities ***/
+  /* Mobile */
+  @media (width < 599px) {
+    grid-template-columns: 1fr;
+  }
+}
+
+.grid-columns-articles {
+  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+  grid-auto-rows: 1fr;
+}
+
+
+/**********************
+ UTILITIES 
+ *********************/
 
 .visually-hidden {
   clip: rect(0 0 0 0);
@@ -238,10 +257,6 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   position: absolute;
   white-space: nowrap;
   width: 1px;
-}
-
-.clr-font-green {
-  color: var(--clr-accent);
 }
 
 .flex-row {
@@ -265,6 +280,63 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
 .flex-h-center {
   justify-content: center;
 }
+
+.grid {
+  display: grid;
+  gap: var(--flow-space);
+}
+
+.grid-v-center {
+  align-items: center;
+}
+
+.grid-h-center {
+  justify-items: center;
+}
+
+.grid-self-end {
+  justify-self: end;
+
+  /* Mobile */
+  @media (width < 599px) {
+    justify-self: center;
+  }
+}
+
+.txt-center {
+  text-align: center;
+}
+
+.section-padding {
+  padding-block: var(--flow-space-lg);
+}
+
+.bg-clr-light-1 {
+  background-color: var(--clr-primary-light-1);
+}
+
+.bg-clr-accent {
+  background-color: var(--clr-accent);
+}
+
+.txt-clr-light-1 {
+  color: var(--clr-primary-light-1);
+}
+
+.txt-clr-accent {
+  color: var(--clr-accent);
+}
+
+.margin-top-lg {
+  margin-top: var(--flow-space-lg);
+}
+
+
+/************************
+BLOCKS/COMPONENTS
+************************/
+
+/* HEADER /NAV */
 
 .logo-svg {
   width: 2rem;
@@ -294,67 +366,43 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   }
 }
 
-.bg-clr-light-1 {
-  background-color: var(--clr-primary-light-1);
-}
+.link-menu,
+.btn-menu {
+  display: block;
+  padding: 1rem;
 
-.bg-clr-accent {
-  background-color: var(--clr-accent);
-}
-
-.txt-clr-light-1 {
-  color: var(--clr-primary-light-1);
-}
-
-.grid {
-  display: grid;
-  gap: var(--flow-space);
-}
-
-.grid-v-center {
-  align-items: center;
-}
-
-.grid-h-center {
-  justify-items: center;
-}
-
-.grid-self-end {
-  justify-self: end;
-
-  /* Mobile */
-  @media (width < 599px) {
-    justify-self: center;
-  }
-
-}
-
-.txt-center {
-  text-align: center;
-}
-
-.section-padding {
-  padding-block: var(--flow-space-lg);
-}
-
-.svg-deco {
-  background-color: var(--clr-accent);
-  aspect-ratio: 1 / 1;
-  border-radius: 50%;
-  width: 300px;
-
-  display: flex;
-  justify-content: center;
-  align-items: center;
-
-  svg {
-    width: 50%;
+  &:hover {
+    background-color: var(--clr-accent);
+    color: var(--clr-accent-light-1);
+    text-decoration: none;
   }
 }
 
-.max-w-70 {
-  max-width: 70%;
+.btn-menu {
+  background: none;
+  border: none;
+  cursor: pointer;
+  color: var(--clr-accent);
+
+  &:focus-visible {
+    background-color: var(--clr-accent);
+    color: var(--clr-accent-light-1);
+    text-decoration: none;
+  }
 }
+
+/* Added display block and padding to make the click-area larger, learned that from Roberts lession */
+.link-menu {
+  display: block;
+  padding: 1rem;
+
+  &:hover {
+    color: var(--clr-accent-light-1);
+    background-color: var(--clr-accent);
+  }
+}
+
+/* CTA SECTION */
 
 .grid-columns-cta-section {
   grid-template-columns: 1fr 1fr;
@@ -380,17 +428,26 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   grid-area: second;
 }
 
-.grid-columns-footer {
-  grid-template-columns: 1fr 1fr;
-  margin: auto;
+.max-w-70 {
+  max-width: 70%;
 }
 
-.grid-columns-articles {
-  grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
-  grid-auto-rows: 1fr;
+.svg-deco {
+  background-color: var(--clr-accent);
+  aspect-ratio: 1 / 1;
+  border-radius: 50%;
+  width: 300px;
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  svg {
+    width: 50%;
+  }
 }
 
-/* ...... */
+/* FORM */
 
 .form-deco {
   display: inline-flex;
@@ -408,13 +465,16 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   margin: 0.25rem;
   color: var(--clr-primary-dark);
 
-  /* max-width funkar inte! kolla varför */
+  /* Want to make a longer inputfield but max-width or width 100% do not work, only if I put a fixed width (eg pixles) HELP */
   width: 100%;
 }
+
+/* BUTTON STYLE */
 
 .form-btn,
 .link-btn-style {
   background-color: var(--clr-accent);
+  color: var(--clr-primary-light-1);
   border-radius: 1.5rem;
   border: 2px solid var(--clr-accent);
   padding: 0.25rem 1.25rem;
@@ -427,6 +487,9 @@ https://www.youtube.com/watch?v=cf-J4ffMBfo
   }
 }
 
+/* FLOWER TAGS */
+
+/* data-type is something new I newer tried before but wanted to try, learned it from Robert */
 li[data-type] {
   color: var(--clr-primary-light-1);
   border-radius: 1.5rem;
@@ -473,6 +536,8 @@ li[data-type="air"] {
   background-color: var(--clr-air);
 }
 
+/* CARD */
+
 .card {
   background-color: var(--clr-primary-light-1);
   box-shadow: var(--border-shadow);
@@ -503,10 +568,11 @@ li[data-type="air"] {
   padding: 0 1rem;
 }
 
-/* Justera avatar storlek */
 .avatar {
-  width: 50px;
+  width: 3rem;
 }
+
+/* FLOWER BENTO GRID */
 
 /* The grid area solution comes from Kewin Powell and how he solved the bento grid task */
 .images-deco {
@@ -563,40 +629,4 @@ li[data-type="air"] {
 
 .six {
   grid-area: six;
-}
-
-.link-menu,
-.btn-menu {
-  display: block;
-  padding: 1rem;
-
-  &:hover {
-    background-color: var(--clr-accent);
-    color: var(--clr-accent-light-1);
-    text-decoration: none;
-  }
-}
-
-.btn-menu {
-  background: none;
-  border: none;
-  cursor: pointer;
-  color: var(--clr-accent);
-
-  &:focus-visible {
-    background-color: var(--clr-accent);
-    color: var(--clr-accent-light-1);
-    text-decoration: none;
-  }
-}
-
-/* Added display block and padding to make the click-area larger, learned that from Roberts lession */
-.link-menu {
-  display: block;
-  padding: 1rem;
-
-  &:hover {
-    color: var(--clr-accent-light-1);
-    background-color: var(--clr-accent);
-  }
 }

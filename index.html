@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="sv">
 
 <head>
 	<meta charset="UTF-8">
@@ -14,13 +14,16 @@
 
 <body>
 
+	<!-- HEADER -->
 	<header class="content-grid bg-clr-light-1">
 		<!-- since I have a nav in the footer I wanted to make it clear that this is the main navigation of the site with aria-label -->
 		<nav aria-label="Huvudnavigation" class="flex-row flex-space-b">
+
+			<!-- LOGO -->
 			<a href="#" aria-label="Till startsidan Planned Planthood" class="flex-row flex-v-center">
 				<!-- added aria-hidden="true" to make svg just decorative, this is gpt info, need to check source -->
 				<svg width="214" height="210" viewBox="0 0 214 210" xmlns="http://www.w3.org/2000/svg" aria-hidden="true"
-					class="logo-svg clr-font-green">
+					class="logo-svg txt-clr-accent">
 					<!-- Changed stroke from white to currentColor to be able to change color. Source chatgpt. -->
 					<g fill="none" stroke="currentColor" stroke-width="12">
 						<path
@@ -29,15 +32,15 @@
 							d="M115.122 194.336C115.527 193.897 115.927 193.455 116.319 193.009L153.69 169.521C182.93 151.143 191.451 112.997 172.598 84.3362C169.529 79.6722 163.25 78.3762 158.555 81.3272L121.425 104.664C118.17 100 114.303 95.6362 109.83 91.6843L66.4654 53.3677C61.8146 49.2582 54.6598 49.6021 50.4409 54.1641C22.9065 83.9378 25.2893 129.917 55.732 156.816L99.097 195.132C103.748 199.242 110.903 198.898 115.122 194.336Z" />
 					</g>
 				</svg>
-
 				<span class="logo-text">
 					<span>PLANNED</span>
 					<span>PLANTHOOD</span>
 				</span>
 			</a>
 
+			<!-- NAVLINKS -->
 			<ul class="flex-row flex-v-center">
-				<!-- Hamburger menu -->
+				<!-- Hamburger menu button -->
 				<li class="mobile-only"><button type="button" class="btn-menu">
 						<svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" width="32" height="32" viewBox="0 0 24 24"
 							stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
@@ -57,32 +60,35 @@
 		</nav>
 	</header>
 
+	<!-- MAIN CONTENT -->
 	<main class="content-grid">
-		<!-- Add section label aria -->
-		<section class="grid txt-center section-padding">
-			<h1>Våra uppskattade växter</h1>
+
+		<!-- SECTION INTRO -->
+		<!-- Aria label to make screen readers be able to jump between sections (and what their names are) -->
+		<section class="grid txt-center section-padding" aria-labelledby="featured-plants-heading">
+			<h1 id="featured-plants-heading">Våra uppskattade växter</h1>
 			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Laboriosam, ex vero harum
 				recusandae et, nemo ea, non
 				fugit
 				sapiente sit dolore autem! Expedita illo deleniti maiores harum consequatur debitis hic.</p>
 
-			<div class="images-deco">
-				<img src="assets/images/blommor1.jpg" alt="" class="one" aria-hidden="true">
+			<!-- Added aria-hidden true on this photo decoration gallery to make screenreaders ignore them -->
+			<div class="images-deco" aria-hidden="true">
+				<img src="assets/images/blommor1.jpg" alt="" class="one">
 
-				<img src="assets/images/blommor2.jpg" alt="" class="two" aria-hidden="true">
+				<img src="assets/images/blommor2.jpg" alt="" class="two">
 
-				<img src="assets/images/blommor3.jpg" alt="" class="three" aria-hidden="true">
+				<img src="assets/images/blommor3.jpg" alt="" class="three">
 
-				<img src="assets/images/pelargon.jpg" alt="" class="four" aria-hidden="true">
+				<img src="assets/images/pelargon.jpg" alt="" class="four">
 
-				<img src="assets/images/tomat.jpg" alt="" class="five" aria-hidden="true">
+				<img src="assets/images/tomat.jpg" alt="" class="five">
 
-				<img src="assets/images/gurka.jpg" alt="" class="six" aria-hidden="true">
+				<img src="assets/images/gurka.jpg" alt="" class="six">
 			</div>
-
-
 		</section>
 
+		<!-- SECTION NEWSLETTER -->
 		<section aria-labelledby="newsletter-heading" class="fullwidth bg-clr-light-1 section-padding">
 			<div class="grid grid-columns-cta-section grid-h-center max-w-70">
 				<div class="grid grid-v-center second">
@@ -90,16 +96,16 @@
 						Anmäl dig till vårt nyhetsbrev så du inte missar en utsådd!
 					</h2>
 
+					<!-- FORM -->
 					<form action="" method="POST">
-						<!-- Added Peters visually-hidden class to make it only visible for screen readers-->
+						<!-- Added Roberts visually-hidden class to make it only visible for screen readers-->
 						<label for="user-email" class="visually-hidden">
 							E-postadress
 						</label>
-
+						<!-- The border around the input and button -->
 						<div class="form-deco">
 							<input type="email" name="email" id="user-email" class="form-input" autocomplete="email"
 								placeholder="namn@domän.se" required>
-
 							<button type="submit" class="form-btn">Skicka</button>
 						</div>
 					</form>
@@ -146,13 +152,11 @@
 					</svg>
 				</div>
 			</div>
-
 		</section>
 
-
-		<!-- Fixa a11y för section-->
-		<section class="grid section-padding">
-			<h2 class="txt-center">Alla våra växter</h2>
+		<!-- SECTION ALL PLANTS-->
+		<section class="grid section-padding" aria-labelledby="all-plants-heading">
+			<h2 id="all-plants-heading" class="txt-center">Alla våra växter</h2>
 
 			<div class="grid grid-columns-articles">
 				<article class="card">
@@ -167,7 +171,7 @@
 						<p>Gurka växer snabbt, är enkel att odla och ger mängder med gurkor, bara man är noga med vattning,
 							omplantering,
 							duschning och gödsling.</p>
-						<div class="flex-row">
+						<footer class="flex-row">
 							<!-- svg from Fontawesome. Added aria-hidden="true" since avatar is just deco. Also added fill="currentColor" to make it the color I wanted. -->
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="avatar"
 								aria-hidden="true"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
@@ -175,11 +179,11 @@
 									d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z" />
 							</svg>
 							<div>
-								<p class="clr-font-green">Coolio</p>
+								<p class="txt-clr-accent">Coolio</p>
 								<!-- Added time after reading about it at W3Schools https://www.w3schools.com/tags/tag_time.asp -->
 								<p><time datetime="2024-04-01">2024-04-01</time></p>
 							</div>
-						</div>
+						</footer>
 					</a>
 				</article>
 
@@ -193,17 +197,17 @@
 						</ul>
 						<h3>Tomat</h3>
 						<p>En perfekt grönsak att odla på balkongen eller i trädgården. Ger riklig skörd under sommaren.</p>
-						<div class="flex-row">
+						<footer class="flex-row">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="avatar"
 								aria-hidden="true"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
 								<path fill="currentColor"
 									d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z" />
 							</svg>
 							<div>
-								<p class="clr-font-green">Anna Odlare</p>
+								<p class="txt-clr-accent">Anna Odlare</p>
 								<p><time datetime="2024-12-05">2024-12-05</time></p>
 							</div>
-						</div>
+						</footer>
 					</a>
 				</article>
 
@@ -218,17 +222,17 @@
 						</ul>
 						<h3>Pelargon</h3>
 						<p>En vacker och lättskött blomma som trivs både inne och ute under sommaren.</p>
-						<div class="flex-row">
+						<footer class="flex-row">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="avatar"
 								aria-hidden="true"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
 								<path fill="currentColor"
 									d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z" />
 							</svg>
 							<div>
-								<p class="clr-font-green">Blomsterkalle</p>
+								<p class="txt-clr-accent">Blomsterkalle</p>
 								<p><time datetime="2024-12-03">2024-12-03</time></p>
 							</div>
-						</div>
+						</footer>
 					</a>
 				</article>
 
@@ -242,17 +246,17 @@
 						</ul>
 						<h3>Basilika</h3>
 						<p>En fantastisk krydda för pastarätter och sallader. Trivs bäst i ett soligt fönster.</p>
-						<div class="flex-row">
+						<footer class="flex-row">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="avatar"
 								aria-hidden="true"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
 								<path fill="currentColor"
 									d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z" />
 							</svg>
 							<div>
-								<p class="clr-font-green">Krydd-Malin</p>
+								<p class="txt-clr-accent">Krydd-Malin</p>
 								<p><time datetime="2024-12-07">2024-12-07</time></p>
 							</div>
-						</div>
+						</footer>
 					</a>
 				</article>
 
@@ -266,17 +270,17 @@
 						</ul>
 						<h3>Sallad</h3>
 						<p>Sallad är en av de enklaste grönsakerna att odla och ger snabba resultat för färska måltider.</p>
-						<div class="flex-row">
+						<footer class="flex-row">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="avatar"
 								aria-hidden="true"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
 								<path fill="currentColor"
 									d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z" />
 							</svg>
 							<div>
-								<p class="clr-font-green">Grönis</p>
+								<p class="txt-clr-accent">Grönis</p>
 								<p><time datetime="2024-12-06">2024-12-06</time></p>
 							</div>
-						</div>
+						</footer>
 					</a>
 				</article>
 
@@ -291,22 +295,23 @@
 						</ul>
 						<h3>Ormbunke</h3>
 						<p>En klassisk växt som passar perfekt i badrummet eller på skuggiga platser.</p>
-						<div class="flex-row">
+						<footer class="flex-row">
 							<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 640 640" class="avatar"
 								aria-hidden="true"><!--!Font Awesome Free v7.1.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free Copyright 2025 Fonticons, Inc.-->
 								<path fill="currentColor"
 									d="M463 448.2C440.9 409.8 399.4 384 352 384L288 384C240.6 384 199.1 409.8 177 448.2C212.2 487.4 263.2 512 320 512C376.8 512 427.8 487.3 463 448.2zM64 320C64 178.6 178.6 64 320 64C461.4 64 576 178.6 576 320C576 461.4 461.4 576 320 576C178.6 576 64 461.4 64 320zM320 336C359.8 336 392 303.8 392 264C392 224.2 359.8 192 320 192C280.2 192 248 224.2 248 264C248 303.8 280.2 336 320 336z" />
 							</svg>
 							<div>
-								<p class="clr-font-green">Naturvännen</p>
+								<p class="txt-clr-accent">Naturvännen</p>
 								<p><time datetime="2024-12-08">2024-12-08</time></p>
 							</div>
-						</div>
+						</footer>
 					</a>
 				</article>
 			</div>
 		</section>
 
+		<!-- SECTION SEEDLING -->
 		<section aria-labelledby="seedlings-heading" class="fullwidth bg-clr-light-1 section-padding">
 			<div class="grid grid-columns-cta-section grid-h-center max-w-70">
 				<!-- Planting picture. Picture is just decoration -->
@@ -339,13 +344,13 @@
 				</div>
 			</div>
 		</section>
-
 	</main>
 
-	<footer class="fullwidth bg-clr-accent txt-clr-light-1 section-padding">
-
+	<!-- FOOTER -->
+	<footer class="fullwidth bg-clr-accent txt-clr-light-1 section-padding margin-top-lg">
 		<div class="grid grid-columns-footer grid-v-center">
-			<!-- Got inspo about aria-labelledby from how I did the recept exercise -->
+
+			<!-- ABOUT -->
 			<section aria-labelledby="footer-about-heading" class="grid">
 				<h2 id="footer-about-heading">Om oss</h2>
 				<p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Neque, veniam ducimus aut sint atque ullam alias
@@ -357,6 +362,7 @@
 				</div>
 			</section>
 
+			<!-- NAVLINKS -->
 			<nav aria-labelledby="footer-nav-heading" class="grid-self-end">
 				<!-- for screenreaders only -->
 				<h2 id="footer-nav-heading" class="visually-hidden">Snabblänkar</h2>
@@ -369,7 +375,6 @@
 			</nav>
 		</div>
 	</footer>
-
 
 </body>
 
