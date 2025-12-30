@@ -402,7 +402,7 @@ BLOCKS/COMPONENTS
   }
 }
 
-/* CTA SECTION */
+/* CTA SECTIONS */
 
 .grid-columns-cta-section {
   grid-template-columns: 1fr 1fr;
@@ -436,7 +436,7 @@ BLOCKS/COMPONENTS
   background-color: var(--clr-accent);
   aspect-ratio: 1 / 1;
   border-radius: 50%;
-  width: 300px;
+  width: 250px;
 
   display: flex;
   justify-content: center;

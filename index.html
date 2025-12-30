@@ -41,15 +41,19 @@
 			<!-- NAVLINKS -->
 			<ul class="flex-row flex-v-center">
 				<!-- Hamburger menu button -->
-				<li class="mobile-only"><button type="button" class="btn-menu">
-						<svg xmlns="http://www.w3.org/2000/svg" class="icon-menu" width="32" height="32" viewBox="0 0 24 24"
-							stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round" stroke-linejoin="round">
+				<li class="mobile-only">
+					<!-- Added aria-label on button and aria hidden on svg to make it more a11y. Got a error from to WAVE -->
+					<button type="button" class="btn-menu" aria-label="Öppna meny">
+						<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" class="icon-menu" width="32" height="32"
+							viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" fill="none" stroke-linecap="round"
+							stroke-linejoin="round">
 							<path stroke="none" d="M0 0h24v24H0z" fill="none" />
 							<line x1="4" y1="6" x2="20" y2="6" />
 							<line x1="4" y1="12" x2="20" y2="12" />
 							<line x1="4" y1="18" x2="20" y2="18" />
 						</svg>
-					</button></li>
+					</button>
+				</li>
 
 				<!-- Menu links -->
 				<li class="screen-only"><a href="#" class="link-menu">HEM</a></li>
