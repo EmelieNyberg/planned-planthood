@@ -188,6 +188,7 @@ a {
  COMPOSITION 
  **********************/
 
+/* did not use this flow classes, but will def look in to them when I have more time */
 .flow>*+* {
   margin-block-start: var(--flow-space);
 }
